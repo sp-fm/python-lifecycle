@@ -1,14 +1,17 @@
 import fire
 from loguru import logger
 
+import python_lifecycle
 from config import settings
 from python_lifecycle.calculator.complex import Calculator
 
 
 class BrokenCalculator(Calculator):
     def __init__(self):
-        offset = settings.offset
-        logger.info(f"Offset: {offset}")
+        with settings.using_env(python_lifecycle.ENV):
+            offset = settings.offset
+            logger.info(f"Offset: {offset}")
+            logger.info(f"Set by: {settings.name}")
         self.offset = offset
 
     def add(self, a, b):

@@ -19,9 +19,7 @@ mypy = "^0.782"
 pre-commit = "^2.7.1"
 
 [tool.poetry.scripts]
-calc-simp = "python_lifecycle.calculator.simple:main"
-calc-complex = "python_lifecycle.calculator.complex:main"
-calc-broken = "python_lifecycle.calculator.broken:main"
+calc = "python_lifecycle.calculator.cli:main"
 
 [build-system]
 requires = ["poetry-core>=1.0.0a5"]
