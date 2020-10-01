@@ -1,9 +1,11 @@
 import fire
+from loguru import logger
 
 
 class Calculator:
     @staticmethod
     def add(a, b):
+        logger.info(f"Adding {a} with {b}")
         return a + b
 
     @staticmethod
